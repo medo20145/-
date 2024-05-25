@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الوكيل لصيانة الأجهزة المنزلية</title>
+    <style>
+        /* تنسيقات لشريط الصور */
+        #slider {
+            overflow: hidden;
+        }
+
+        #slider ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        #slider ul li {
+            float: left;
+            width: 200px;
+            height: 200px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>الوكيل لصيانة الأجهزة المنزلية</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#lg">LG</a></li>
+            <li><a href="#samsung">سامسونج</a></li>
+            <li><a href="#ariston">اريستون</a></li>
+            <li><a href="#zanussi">زانوسي</a></li>
+            <li><a href="#fresh">فريش</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <div id="slider">
+            <ul>
+                <li><img src="washer1.jpg" alt="غسالة"></li>
+                <li><img src="washer2.jpg" alt="غسالة"></li>
+                <li><img src="washer3.jpg" alt="غسالة"></li>
+                <li><img src="washer4.jpg" alt="غسالة"></li>
+                <li><img src="washer5.jpg" alt="غسالة"></li>
+            </ul>
+        </div>
+
+        <section>
+            <h2>اتصل بنا</h2>
+            <p>للحصول على خدمات الصيانة، يرجى الاتصال بنا عبر الهاتف أو ملء نموذج الاتصال بالأسفل.</p>
+            <p>رقم الهاتف: <a href="tel:01099850950">01099850950 (WhatsApp)</a></p>
+            <p>تواصل معنا الآن واحصل على خدمة صيانة متميزة لغسالتك من فريق عمل محترف ومدرب. نحن هنا لمساعدتك!</p>
+        </section>
+    </main>
+    
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2024 الوكيل لصيانة الأجهزة المنزلية</p>
+    </footer>
+
+    <script>
+        /* تحريك شريط الصور */
+        let slider = document.getElementById('slider');
+        let sliderUl = slider.querySelector('ul');
+        let slides = sliderUl.querySelectorAll('li');
+        let slideWidth = slides[0].offsetWidth;
+        let currentSlide = 0;
+
+        setInterval(() => {
+            currentSlide++;
+            if (currentSlide >= slides.length) {
+                currentSlide = 0;
+            }
+            sliderUl.style.transform = translateX(-${slideWidth * currentSlide}px);
+        }, 2000); // تغيير الصور كل ثانيتين
+    </script>
+</body>
+</html>
